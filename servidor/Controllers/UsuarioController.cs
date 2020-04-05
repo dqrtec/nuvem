@@ -2,7 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-using Model.Usuario;
+using Model;
+using Repository;
+using Contexto;
 
 namespace servidor.Controllers
 {
@@ -11,23 +13,52 @@ namespace servidor.Controllers
     public class UsuarioController : ControllerBase
     {
         private readonly ILogger<UsuarioController> _logger;
+        private IUsuarioRepository usuarioRepository;
 
         public UsuarioController(ILogger<UsuarioController> logger)
         {
+            this.usuarioRepository = new UsuarioRepository( new UsuarioContext());
             _logger = logger;
         }
 
         [HttpGet]
         [Route("vivo")]
-        public string isAlive(Usuario usuario){
-            Console.WriteLine(usuario.toString());
-            return usuario.toString();
+        public string isAlive(){
+            return "Eu estou vivo";
         }
 
-        [HttpPost]
-        public Boolean isUser(Usuario usuario)
+        /* json surportado
         {
-            Console.WriteLine(usuario.toString());
+        	"nome" : "",
+            "apelido" : "",
+            "senha" : "",
+            "email" : "",
+            "urlFoto" : "",
+            "Foto" : ""
+        }*/
+        [HttpPost]
+        [Route("cadastrar")]
+        public Boolean PostCadastrarUsuario(Usuario usuario){
+            bool existeUsuario = false;
+            if(!existeUsuario){
+                // operacao de cadastro de ususario()
+                return true;
+            }
+            return false;
+        }
+
+        [HttpPut]
+        [Route("atualizar")]
+        public Boolean PutAtualizarDados(Usuario usuario){
+            try
+            {
+                //atualizarUsuario()
+            }
+            catch (System.Exception)
+            {
+                
+                throw;
+            }
             return false;
         }
     }
