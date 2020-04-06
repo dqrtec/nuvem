@@ -1,10 +1,12 @@
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace Model
 {
     public class Usuario
     {
         public string nome { get; set; }
+        [Key]
         public string apelido { get; set; }
         public string senha { get; set; }
         public string email { get; set; }

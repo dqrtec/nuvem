@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\daniel\\Desktop\\github\\nuvem\\servidor\\servidor.csproj": {}
+    "C:\\Users\\daniel\\Desktop\\github\\nuvem\\servidor\\servidor.csproj": {}
   },
   "projects": {
-    "c:\\Users\\daniel\\Desktop\\github\\nuvem\\servidor\\servidor.csproj": {
+    "C:\\Users\\daniel\\Desktop\\github\\nuvem\\servidor\\servidor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\daniel\\Desktop\\github\\nuvem\\servidor\\servidor.csproj",
+        "projectUniqueName": "C:\\Users\\daniel\\Desktop\\github\\nuvem\\servidor\\servidor.csproj",
         "projectName": "servidor",
-        "projectPath": "c:\\Users\\daniel\\Desktop\\github\\nuvem\\servidor\\servidor.csproj",
+        "projectPath": "C:\\Users\\daniel\\Desktop\\github\\nuvem\\servidor\\servidor.csproj",
         "packagesPath": "C:\\Users\\daniel\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\daniel\\Desktop\\github\\nuvem\\servidor\\obj\\",
+        "outputPath": "C:\\Users\\daniel\\Desktop\\github\\nuvem\\servidor\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\daniel\\AppData\\Roaming\\NuGet\\NuGet.Config"
