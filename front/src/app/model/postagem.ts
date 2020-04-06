@@ -1,6 +1,7 @@
 export interface Postagem{
-    apelido: string, // Apelido de quem publicou a postagem
-    src: string,
-    data,
-    curtida: string[] // Array de pelidos de todos que curtiram a foto
+    owner: string, // Apelido de quem publicou a postagem
+    img: string,
+    description: string,
+    date: string,
+    likes: string[] // Array de pelidos de todos que curtiram a foto
 }

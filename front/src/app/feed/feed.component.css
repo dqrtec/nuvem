@@ -1,0 +1,13 @@
+.card-header .user-img{
+    max-width: 40px;
+    margin: 10px;
+    border-radius: 100%;
+}
+.card-header h5{
+    margin-top: 15px;
+}
+
+.card-body p{
+    margin: 10px;
+    font-size: 18px;
+}
