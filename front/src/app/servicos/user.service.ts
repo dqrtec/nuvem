@@ -25,9 +25,9 @@ export class UserService {
   }
 
   getUser(apelido: string): Observable<User>{
-    return this.http.get<User>(`${this.url}?apelido=${apelido}`, this.httpOptions)
+    return this.http.get<User>(`${this.url}?user=${apelido}`, this.httpOptions)
             .pipe(
-              tap(user => console.log('get user apelido: '+ user.apelido)),
+              tap(user => console.log('get user: '+ user.user)),
               catchError(this.handleError<User>('getUser'))
             )
   }

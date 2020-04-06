@@ -9,7 +9,7 @@ import { Postagem } from '../model/postagem'
   providedIn: 'root'
 })
 export class PostagemService {
-  url = 'localhost:3000/postagem';
+  url = 'localhost:3000/post';
   private httpOptions = {
     headers: new HttpHeaders({'Content-type': 'application/json'})
   };
@@ -19,13 +19,13 @@ export class PostagemService {
   getPostagens(): Observable<Postagem[]>{
     return this.http.get<Postagem[]>(this.url, this.httpOptions)
             .pipe(
-              tap(() => console.log("get postagem")),
+              tap(() => console.log("get post")),
               catchError(this.handleError<Postagem[]>('getPostagens', []))
             )
   }
 
   getPostagensByDate(dataIni: string, dataFim:string): Observable<Postagem[]>{
-    var urlDate = `${this.url}?data_gte=${dataIni}&data_lte=${dataFim}`
+    var urlDate = `${this.url}?date_gte=${dataIni}&date_lte=${dataFim}`
     return this.http.get<Postagem[]>(urlDate, this.httpOptions)
             .pipe(
               tap(() => console.log(`get postagem por data: ${dataIni} : ${dataFim}`)),
