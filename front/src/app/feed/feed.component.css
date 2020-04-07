@@ -1,3 +1,6 @@
+.card{
+    margin-bottom: 30px;
+}
 .card-header .user-img{
     max-width: 40px;
     margin: 10px;
@@ -10,4 +13,8 @@
 .card-body p{
     margin: 10px;
     font-size: 18px;
+}
+
+.card-footer button{
+    margin: 10px;
 }
