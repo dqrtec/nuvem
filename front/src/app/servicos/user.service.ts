@@ -32,6 +32,16 @@ export class UserService {
             )
   }
 
+  postUser(user: User): void{
+    this.http.post(this.url, user, this.httpOptions)
+        .pipe(
+          tap(() => console.log('post user: '+user)),
+          catchError(this.handleError<void>('post user'))
+        )
+  }
+
+  
+
 
 
   private handleError<T>(operation = 'operation', result?: T){

@@ -12,6 +12,7 @@
         <img [src]="post.img" class='col-sm-12' alt="">
         <p>{{ post.description }}</p>
       </div>
+      
     </div>
 
     <div class='card-footer'>
@@ -19,7 +20,7 @@
       [class.btn-outline-primary]="like == false"
       [class.btn-primary]="like == true"
       >Curtir</button>
-      <p>Curtido por <strong>{{ post.likes }}</strong></p>
+      <span>Curtido por <strong>{{ post.likes }}</strong></span>
     </div>
   </div>
 </div>

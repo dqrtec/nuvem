@@ -9,7 +9,7 @@ import { Postagem } from '../model/postagem'
   providedIn: 'root'
 })
 export class PostagemService {
-  url = 'localhost:3000/post';
+  url = 'http://localhost:3000/post';
   private httpOptions = {
     headers: new HttpHeaders({'Content-type': 'application/json'})
   };
