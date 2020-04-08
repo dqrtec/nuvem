@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using System.Collections.Generic;
 using Pomelo.EntityFrameworkCore.MySql;
 
@@ -6,15 +7,19 @@ using Model;
 
 namespace Contexto
 {
-    public class UsuarioContext : DbContext
+  public class UsuarioContext : DbContext
+  {
+    string TODO_CONNECTION_STRING = "";
+    public DbSet<Usuario> Usuarios { get; set; }
+    public UsuarioContext()
     {
-        public DbSet<Usuario> Usuarios { get; set; }
-        public DbSet<Postagem> Postagems { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseMySql(@"Server=(localdb)\mssqllocaldb;Database=Blogging;Integrated Security=True");
-            // UseSqlServer (@"Server=(localdb)\mssqllocaldb;Database=Blogging;Integrated Security=True");
-        }
+      TODO_CONNECTION_STRING = "Server=localhost;Port=3306;Database=database1;Uid=root;";
+      // TODO_CONNECTION_STRING = "Server=database-1.cgognr9jnz8a.us-east-2.rds.amazonaws.com;Port=3306;Uid=admin;Pwd=admin123;";
+    }
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+      {
+        optionsBuilder.UseMySql(TODO_CONNECTION_STRING);
+        base.OnConfiguring(optionsBuilder);
+      }
     }
 }
