@@ -37,13 +37,13 @@
         <label >Foto de perfil</label>
         <input type="file" class="form-control" (change)='fileChange($event)' placeholder="foto de perfil">
       </div>
-      <submit (click)="cadastrar(
+      <button (click)="cadastrar(
                 { 'nome': nome.value,
-                  'login': apelido.value,
+                  'apelido': apelido.value,
                   'email': email.value,
                   'senha': senha.value}
               )" 
-      class="btn btn-primary" >Cadastrar</submit>
+      class="btn btn-primary" >Cadastrar</button>
     </form>
   </div>
 </div>
