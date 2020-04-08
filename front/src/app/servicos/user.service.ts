@@ -9,7 +9,7 @@ import { User } from "../model/user"
   providedIn: 'root'
 })
 export class UserService {
-  url = 'localhost:3000/user';
+  url = 'localhost:8080/api/heroes';
   private httpOptions = {
     headers: new HttpHeaders({'Content-type': 'application/json'})
   };
@@ -27,17 +27,17 @@ export class UserService {
   getUser(apelido: string): Observable<User>{
     return this.http.get<User>(`${this.url}?user=${apelido}`, this.httpOptions)
             .pipe(
-              tap(user => console.log('get user: '+ user.user)),
+              tap(user => console.log('get user: '+ user.apelido)),
               catchError(this.handleError<User>('getUser'))
             )
   }
 
-  postUser(user: User): void{
-    this.http.post(this.url, user, this.httpOptions)
-        .pipe(
-          tap(() => console.log('post user: '+user)),
-          catchError(this.handleError<void>('post user'))
-        )
+  postUser(user): Observable<User>{
+    return this.http.post<User>(this.url, user, this.httpOptions)
+          .pipe(
+            tap(newUser => console.log('post user: '+newUser)),
+            catchError(this.handleError<User>('post user'))
+          )
   }
 
   

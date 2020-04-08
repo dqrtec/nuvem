@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
 
   getUser(userApelido): User{
     
-    var usuario = <User> {"name": "Usuario 01", "user": userApelido, "password": "123456", "email": "user01@gmail.com", "img": "../../assets/imagens/user.png"}
+    var usuario = <User> {"nome": "Usuario 01", "apelido": userApelido, "senha": "123456", "email": "user01@gmail.com", "foto": "../../assets/imagens/user.png"}
     return usuario;
     
     // Código quando dados tiverem vindo da api 
