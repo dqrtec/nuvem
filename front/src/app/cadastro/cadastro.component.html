@@ -12,22 +12,38 @@
   </div>
 
   <div class='body col-sm-8'>
-    <form>
+    <form method='post'>
       <div class="form-group">
         <label >Nome Completo</label>
-        <input class="form-control" placeholder="Nome Completo">
+        <input #nome class="form-control" placeholder="Nome Completo">
       </div>
 
       <div class="form-group">
-        <label >Login</label>
-        <input type="password" class="form-control" placeholder="Login">
+        <label >Apelido</label>
+        <input #apelido type="text" class="form-control" placeholder="Apelido">
+      </div>
+
+      <div class="form-group">
+        <label >Email</label>
+        <input #email type="text" class="form-control" placeholder="Email">
       </div>
 
       <div class="form-group">
         <label >Senha</label>
-        <input type="password" class="form-control" placeholder="Senha">
+        <input #senha type="password" class="form-control" placeholder="Senha">
       </div>
-      <button class="btn btn-primary" (click)="cadastrar()">Cadastrar</button>
+
+      <div class="form-group">
+        <label >Foto de perfil</label>
+        <input type="file" class="form-control" (change)='fileChange($event)' placeholder="foto de perfil">
+      </div>
+      <submit (click)="cadastrar(
+                { 'nome': nome.value,
+                  'login': apelido.value,
+                  'email': email.value,
+                  'senha': senha.value}
+              )" 
+      class="btn btn-primary" >Cadastrar</submit>
     </form>
   </div>
 </div>
